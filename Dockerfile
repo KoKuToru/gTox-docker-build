@@ -5,3 +5,4 @@ RUN echo "nobody ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN su -c "cd /tmp && curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz && tar zxvf package-query.tar.gz && cd package-query && makepkg -si --noconfirm" -s /bin/bash nobody
 RUN su -c "cd /tmp && curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz        && tar zxvf yaourt.tar.gz        && cd yaourt        && makepkg -si --noconfirm" -s /bin/bash nobody
 RUN su -c "yaourt -Sy --noconfirm flatbuffers tox-git" -s /bin/bash nobody
+RUN (echo "y"; echo "y") | pacman -Scc
