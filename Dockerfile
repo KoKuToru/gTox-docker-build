@@ -1,4 +1,4 @@
-FROM pritunl/archlinux:latest
+FROM pritunl/archlinux:2015-10-24
 RUN pacman -Syu --noconfirm
 RUN pacman -Sy --noconfirm sudo base-devel desktop-file-utils gettext gstreamermm gtk-update-icon-cache gtkmm3 cmake git librsvg cxxtest clang ninja toxcore
 RUN echo "nobody ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
